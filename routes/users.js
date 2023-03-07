@@ -24,6 +24,7 @@ router.get("/:id", async (req, res) => {
     res.status(404).json(error);
   }
 });
+
 //UPDATE
 router.post("/:id", async (req, res) => {
   if (req.body.userId === req.params.id) {
