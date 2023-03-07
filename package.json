@@ -15,7 +15,7 @@
   "description": "mitm blog website for major project in college",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "author": "prince mahesh",
   "license": "ISC"
