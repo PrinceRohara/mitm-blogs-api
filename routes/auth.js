@@ -41,15 +41,15 @@ router.post("/login", async (req, res) => {
     // !user && res.status(400).json("wrong credentials!");
 
     if (!user) {
-      res.status(400).json("wrong Credentials");
+      return res.status(400).json("wrong Credentials");
     }
 
     const validated = await bcrypt.compare(req.body.password, user.password);
-    !validated && res.status(400).json("wrong credentials!");
+    // !validated && res.status(400).json("wrong credentials!");
 
-    // if (!validated) {
-    //   res.status(400).json("wrong Credentials");
-    // }
+    if (!validated) {
+      return res.status(400).json("wrong Credentials");
+    }
 
     const { password, ...others } = user._doc;
     res.status(200).json(others);
